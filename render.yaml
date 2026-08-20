@@ -1,0 +1,40 @@
+# Fichier de configuration Render (Infrastructure as Code)
+# Doc : https://render.com/docs/blueprint-spec
+#
+# Place ce fichier à la racine du dépôt Git. Sur Render :
+# New > Blueprint > sélectionne le dépôt > Render lit ce fichier
+# et pré-remplit tout automatiquement.
+
+services:
+  - type: web
+    name: lueur
+    runtime: python
+    plan: free
+    region: frankfurt          # change si tu veux une autre région (oregon, ohio, singapore...)
+    branch: main
+    buildCommand: >
+      pip install -r requirements.txt &&
+      python manage.py migrate &&
+      python manage.py collectstatic --noinput
+    startCommand: gunicorn config.wsgi:application
+    envVars:
+      - key: SECRET_KEY
+        generateValue: true     # Render génère une valeur aléatoire et sécurisée
+      - key: DEBUG
+        value: "False"
+      - key: VF_API_KEY
+        sync: false              # laissé vide : à saisir manuellement dans le dashboard (secret)
+      - key: VF_VERSION_ID
+        value: production
+      - key: PYTHON_VERSION
+        value: "3.12.7"
+    autoDeploy: true             # redéploie automatiquement à chaque push sur "branch"
+
+# Optionnel : base Postgres persistante (le disque des Web Services free est éphémère).
+# Décommente ce bloc, crée la variable DATABASE_URL dans le Web Service ci-dessus
+# (fromDatabase), et adapte config/settings.py pour lire DATABASE_URL (dj-database-url).
+#
+# databases:
+#   - name: lueur-db
+#     plan: free
+#     region: frankfurt

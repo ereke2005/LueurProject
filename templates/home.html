@@ -1,0 +1,197 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lueur — Parle, on t'écoute</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Karla:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{% static 'css/style.css' %}?v=2.0">
+</head>
+<body>
+
+<a href="#main" class="skip-link">Aller au contenu</a>
+
+<header>
+  <div class="headbar">
+    <div class="logo"><span class="logo-dot"></span> Lueur</div>
+    <nav aria-label="Navigation principale">
+      <a href="#comment">Comment ça marche</a>
+      <a href="#ressources">Ressources</a>
+      <a href="#conseils">Conseils</a>
+      <a href="#confidentialite">Confidentialité</a>
+    </nav>
+    <button class="exit-btn" id="exitBtn" title="Quitte cette page instantanément — touche Échap">
+      ← Sortie rapide
+    </button>
+  </div>
+</header>
+
+<main id="main">
+
+  <section class="hero">
+    <div class="hero-inner">
+      <div>
+        <span class="eyebrow mono">Gratuit · Anonyme · 24h/24, 7j/7</span>
+        <h1>Le harcèlement ne prend pas de pause.<br><em>Nous non plus.</em></h1>
+        <p class="lede">Lueur est un espace pour parler de ce que tu vis en ligne — insultes, rumeurs, photos partagées sans ton accord, comptes qui te harcèlement. Tu n'as pas besoin de tout expliquer d'un coup. Commence simplement.</p>
+        <div class="cta-row">
+          <button class="btn-primary" id="openChat">Je veux en parler</button>
+          <a href="#ressources" class="btn-ghost">Voir les numéros d'urgence</a>
+        </div>
+      </div>
+
+      <div class="clock-card">
+        <svg class="clock-svg" viewBox="0 0 220 220" role="img" aria-label="Le 3018 est disponible de 9h à 23h. Lueur est disponible 24h sur 24.">
+          <circle cx="110" cy="110" r="90" fill="none" stroke="rgba(0,0,0,0.06)" stroke-width="14"/>
+          <circle cx="110" cy="110" r="90" fill="none" stroke="url(#gradFull)" stroke-width="14" stroke-linecap="round"/>
+          <path d="M173.6,173.6 A90,90 0 1,1 86.7,23.1" fill="none" stroke="#4F46E5" stroke-width="14" stroke-linecap="round" opacity="0.8"/>
+          <defs>
+            <linearGradient id="gradFull" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#F59E0B"/>
+              <stop offset="100%" stop-color="#E11D48"/>
+            </linearGradient>
+          </defs>
+          <text x="110" y="104" text-anchor="middle" fill="#0F172A" font-family="Fraunces, serif" font-size="20">24/7</text>
+          <text x="110" y="124" text-anchor="middle" fill="#475569" font-family="IBM Plex Mono, monospace" font-size="9">LUEUR</text>
+        </svg>
+        <div class="clock-legend">
+          <div class="legend-row"><span class="swatch" style="background:linear-gradient(120deg,#F59E0B,#E11D48)"></span> Lueur — disponible tout le temps</div>
+          <div class="legend-row"><span class="swatch" style="background:#4F46E5"></span> Le 3018 — de 9h à 23h, 7j/7</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="comment">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="mono">Comment ça marche</span>
+        <h2>Trois choses à savoir avant de commencer</h2>
+      </div>
+      <div class="steps">
+        <div class="step">
+          <div class="num">01</div>
+          <h3>Tu restes anonyme</h3>
+          <p>Pas besoin de donner ton nom ou ton établissement pour commencer à écrire. Tu advances à ton rythme, tu peux t'arrêter quand tu veux.</p>
+        </div>
+        <div class="step">
+          <div class="num">02</div>
+          <h3>Personne ne te juge</h3>
+          <p>Ce que tu décris — même si tu penses avoir mal réagi ou trop attendu pour en parler — n'a pas besoin d'être justifié ici.</p>
+        </div>
+        <div class="step">
+          <div class="num">03</div>
+          <h3>On t'oriente vers un humain</h3>
+          <p>Lueur n'est pas un service d'urgence. Selon ta situation, on te guide vers le 3018, le 119 ou un adulte de confiance pour une vraie prise en charge.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="resources" id="ressources">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="mono">En cas d'urgence</span>
+        <h2>Ces numéros sont gratuits et confidentiels</h2>
+        <p>Si tu es en danger immédiat, appelle le 17 (police) ou le 112. Pour tout le reste, ces lignes sont là pour toi.</p>
+      </div>
+      <div class="res-grid">
+        <div class="res-card">
+          <div class="num-big">3018</div>
+          <h3>Cyberharcèlement &amp; violences numériques</h3>
+          <p>Écoute par des professionnels formés, aide pour faire retirer des contenus. Tous les jours, 9h–23h.</p>
+          <span class="tag mono">e-Enfance · 3018.fr</span>
+        </div>
+        <div class="res-card">
+          <div class="num-big">119</div>
+          <h3>Enfance en danger</h3>
+          <p>Pour toi ou pour quelqu'un que tu connais, si la situation devient grave. Disponible 24h/24, 7j/7.</p>
+          <span class="tag mono">Allô Enfance en Danger</span>
+        </div>
+        <div class="res-card">
+          <div class="num-big">Pharos</div>
+          <h3>Signaler un contenu illégal</h3>
+          <p>Pour signaler des contenus haineux, des images intimes diffusées sans accord, ou des menaces.</p>
+          <span class="tag mono">internet-signalement.gouv.fr</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="conseils">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="mono">Réflexes utiles</span>
+        <h2>Quelques gestes qui protègent</h2>
+      </div>
+      <div class="tips">
+        <div class="tip">
+          <div class="dot">1</div>
+          <p><strong>Garde des preuves.</strong> Fais des captures d'écran datées des messages, commentaires ou comptes, même si c'est difficile à relire.</p>
+        </div>
+        <div class="tip">
+          <div class="dot">2</div>
+          <p><strong>Ne réponds pas à la personne qui harcèle.</strong> Répondre alimente souvent la situation plutôt que de l'arrêter.</p>
+        </div>
+        <div class="tip">
+          <div class="dot">3</div>
+          <p><strong>Bloque et signale</strong> le compte directement sur l'application ou le réseau social utilisé.</p>
+        </div>
+        <div class="tip">
+          <div class="dot">4</div>
+          <p><strong>Parles-en à un adulte de confiance</strong> — un parent, un·e infirmier·ère scolaire, ou via le 3018 si tu ne sais pas à qui t'adresser.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="confidentialite">
+    <div class="wrap">
+      <div class="privacy">
+        <div>
+          <span class="mono" style="color:var(--primary)">Confidentialité</span>
+          <h2>Ce que tu dois savoir avant d'écrire</h2>
+          <p>Lueur est un premier pas, pas un service médical ou juridique. Les conversations traitées de manière chiffrée ne sont pas partagées avec ton établissement scolaire ni tes parents. Si ta situation demande une action urgente, on t'orientera clairement vers le 3018 ou le 119.</p>
+        </div>
+        <div class="badge-list">
+          <div class="badge"><p>Aucune identification requise pour commencer à discuter.</p></div>
+          <div class="badge"><p>Un outil d'orientation, pas un substitut à une aide professionnelle.</p></div>
+          <div class="badge"><p>Tu peux quitter le site à tout moment via "Sortie rapide" ou la touche Échap.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <p class="disclaimer">
+    <strong>Important :</strong> Lueur est un assistant conversationnel destiné à orienter et écouter — il ne remplace pas une intervention professionnelle ou policière. En cas de danger immédiat, contacte le 17 ou le 112.
+  </p>
+</main>
+
+<footer>
+  <div class="foot-inner">
+    <div class="logo"><span class="logo-dot"></span> Lueur</div>
+    <div>Un espace d'écoute — pas un service d'urgence officiel.</div>
+  </div>
+</footer>
+
+<div class="chat-panel" id="chatPanel" aria-hidden="true" role="dialog" aria-label="Chat Lueur">
+  <div class="chat-panel-head">
+    <span>Lueur</span>
+    <button id="closeChat" aria-label="Fermer le chat">✕</button>
+  </div>
+  <div class="chat-messages" id="chatMessages"></div>
+  <form id="chatForm" class="chat-input-row">
+    <label for="chatInput" class="sr-only">Ton message</label>
+    <input type="text" id="chatInput" placeholder="Écris ici…" autocomplete="off">
+    <button type="submit">Envoyer</button>
+  </form>
+</div>
+
+<script>window.CSRF_TOKEN = "{{ csrf_token }}";</script>
+<script src="{% static 'js/app.js' %}"></script>
+
+</body>
+</html>
